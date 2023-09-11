@@ -17,3 +17,5 @@
 /maui/maui.csproj.user
 /blazor/obj
 /blazor/bin
+/razor/obj
+/razor/bin
