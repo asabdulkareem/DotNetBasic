@@ -8,3 +8,6 @@
 /webApi/obj
 /webApi/bin
 /webApi/webApi.csproj.user
+/mvc/obj
+/mvc/bin
+/.vscode
