@@ -11,3 +11,6 @@
 /mvc/obj
 /mvc/bin
 /.vscode
+/maui/bin
+/maui/obj
+/mvc/mvc.csproj.user

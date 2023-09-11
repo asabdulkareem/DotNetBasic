@@ -13,6 +13,7 @@ dotnet sln ..\Lab.sln add .\consoleApp.csproj
 dotnet sln ..\Lab.sln add .\empty.csproj
 dotnet sln ..\Lab.sln add .\webApi.csproj
 dotnet sln ..\Lab.sln add .\mvc.csproj
+dotnet sln ..\Lab.sln add .\maui.csproj
 
 !sos.eeversion
 !sos.name2eeS
