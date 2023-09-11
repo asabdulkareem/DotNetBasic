@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webApi", "webApi\webApi.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvc", "mvc\mvc.csproj", "{65DD2FCA-4F65-4E0A-8DBA-0611C0D2CB35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maui", "maui\maui.csproj", "{4A6AC7D9-6E33-4B80-8A16-16EF5D2CDE26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui", "maui\maui.csproj", "{4A6AC7D9-6E33-4B80-8A16-16EF5D2CDE26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor", "blazor\blazor.csproj", "{0BA08F38-213C-4D03-B11B-2AE790C99B56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,8 +43,15 @@ Global
 		{4A6AC7D9-6E33-4B80-8A16-16EF5D2CDE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A6AC7D9-6E33-4B80-8A16-16EF5D2CDE26}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A6AC7D9-6E33-4B80-8A16-16EF5D2CDE26}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0BA08F38-213C-4D03-B11B-2AE790C99B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA08F38-213C-4D03-B11B-2AE790C99B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA08F38-213C-4D03-B11B-2AE790C99B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA08F38-213C-4D03-B11B-2AE790C99B56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE801B3A-95AC-4436-B539-2E4673783778}
 	EndGlobalSection
 EndGlobal
