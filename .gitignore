@@ -1,3 +1,7 @@
 /.vs
 /consoleApp/bin
 /consoleApp/obj
+/empty/Properties/launchSettings.json
+/empty/bin
+/empty/obj
+/empty/empty.csproj.user

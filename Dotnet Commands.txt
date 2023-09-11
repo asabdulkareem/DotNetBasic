@@ -1,0 +1,17 @@
+dotnet --version 
+dotnet --info 
+dotnet --list-runtimes
+dotnet --list-sdks
+
+dotnet -h|--help
+
+dotnet new list
+
+dotnet new sln
+dotnet sln ..\Lab.sln add .\consoleApp.csproj
+
+!sos.eeversion
+!sos.name2eeS
+!sos.u
+
+dotnet new console -n consoleAppLatest
