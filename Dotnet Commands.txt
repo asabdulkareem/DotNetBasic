@@ -8,7 +8,9 @@ dotnet -h|--help
 dotnet new list
 
 dotnet new sln
+//Run These Command in project folder
 dotnet sln ..\Lab.sln add .\consoleApp.csproj
+dotnet sln ..\Lab.sln add .\empty.csproj
 
 !sos.eeversion
 !sos.name2eeS
