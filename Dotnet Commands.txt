@@ -2,21 +2,31 @@ dotnet --version
 dotnet --info 
 dotnet --list-runtimes
 dotnet --list-sdks
-
-dotnet -h|--help
-
+//list all dotnet version
 dotnet new list
-
+dotnet -h|--help
+//create sln files
 dotnet new sln
-//Run These Command in project folder
+//Run These Command in project folder to add project to sln
 dotnet sln ..\Lab.sln add .\consoleApp.csproj
 dotnet sln ..\Lab.sln add .\empty.csproj
 dotnet sln ..\Lab.sln add .\webApi.csproj
 dotnet sln ..\Lab.sln add .\mvc.csproj
 dotnet sln ..\Lab.sln add .\maui.csproj
+//Add Nuget package
+dotnet add package Newtonsoft.Json --version 13.0.3
+//Remove Nuget Project
+dotnet remove package Newtonsoft.Json --version 13.0.3
+//Run Project
+dotnet run
+dotnet run --project .\consoleApp\consoleApp.csproj
+//clean project
+dotnet clean
+//build project
+dotnet build
 
 !sos.eeversion
 !sos.name2eeS
 !sos.u
-
+// create project with name consoleAppLatest
 dotnet new console -n consoleAppLatest
