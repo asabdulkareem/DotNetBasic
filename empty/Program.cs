@@ -25,6 +25,18 @@ var builder = WebApplication.CreateBuilder(webApplicationOptions);
 
 //Build (Configuring the Middleware Components)
 var app = builder.Build();
+//If the Environment is Development, Please Show the Unhandled Exception Details 
+//if (app.Environment.IsDevelopment())
+//{
+//    //Create an Instance of DeveloperExceptionPageOptions to Customize
+//    //UseDeveloperExceptionPage Middleware Component
+//    DeveloperExceptionPageOptions developerExceptionPageOptions = new DeveloperExceptionPageOptions
+//    {
+//        SourceCodeLineCount = 5
+//    };
+//    //Passing DeveloperExceptionPageOptions Instance to UseDeveloperExceptionPage Middleware Component
+//    app.UseDeveloperExceptionPage(developerExceptionPageOptions);
+//}
 //order of execution
 //appsettings.json
 // appsettings.{Environment}.json here we use appsettings.Development.json
@@ -66,18 +78,31 @@ string? MyCustomKeyValueDirect = configuration["MyCustomKey"];
 //default.htm
 //default.html 
 /// Specify the MyCustomPage1.html as the default page
-            //First Create an Instance of DefaultFilesOptions
-DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
-//Clear any DefaultFileNames if already there
-defaultFilesOptions.DefaultFileNames.Clear();
-//Add the default HTML Page to the DefaultFilesOptions Instance
-defaultFilesOptions.DefaultFileNames.Add("CustomFiles.html");
-app.UseDefaultFiles(defaultFilesOptions);
+//First Create an Instance of DefaultFilesOptions
+//DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+////Clear any DefaultFileNames if already there
+//defaultFilesOptions.DefaultFileNames.Clear();
+////Add the default HTML Page to the DefaultFilesOptions Instance
+//defaultFilesOptions.DefaultFileNames.Add("CustomFiles.html");
+//app.UseDefaultFiles(defaultFilesOptions);
+// Use UseFileServer instead of UseDefaultFiles and UseStaticFiles
+//FileServerOptions fileServerOptions = new FileServerOptions();
+//fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+//fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("CustomFiles.html");
+//app.UseFileServer(fileServerOptions);
+// Enable directory browsing on the current path
+//app.UseDirectoryBrowser();
 app.UseStaticFiles();
 //Adding Another Middleware Component to the Request Processing Pipeline
-app.Run(async (context) =>
+//app.Run(async (context) =>
+//{
+//    await context.Response.WriteAsync("Request Handled and Response Generated");
+//});
+app.MapGet("/", async context =>
 {
-    await context.Response.WriteAsync("Request Handled and Response Generated");
+    int Number1 = 10, Number2 = 0;
+    int Result = Number1 / Number2; //This statement will throw Runtime Exception
+    await context.Response.WriteAsync($"Result : {Result}");
 });
 //app.MapGet("/", () => $"EnvironmentName: {app.Environment.EnvironmentName} \n" +
 //            $"ApplicationName: {app.Environment.ApplicationName} \n" +
