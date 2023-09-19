@@ -1,5 +1,7 @@
 // Create
 //Step1: Creating an Instance of WebApplicationOptions Class
+using Microsoft.AspNetCore.Http;
+
 WebApplicationOptions webApplicationOptions = new WebApplicationOptions
 {
     WebRootPath = "MyWebRoot", //Setting the WebRootPath as MyWebRoot
@@ -56,11 +58,23 @@ string? MyCustomKeyValueDirect = configuration["MyCustomKey"];
 //    await context.Response.WriteAsync("Middleware3: Incoming Request handled and response generated\n");
 //    //Terminal Middleware Component i.e. cannot call the Next Component
 //});
-app.MapGet("/", () => $"EnvironmentName: {app.Environment.EnvironmentName} \n" +
-            $"ApplicationName: {app.Environment.ApplicationName} \n" +
-            $"WebRootPath: {app.Environment.WebRootPath} \n" +
-            $"ContentRootPath: {app.Environment.ContentRootPath}");
-            //This will Run the Application
-            app.Run();
+//The UseDefaultFiles() middleware will search the wwwroot folder for the following files.
+//index.htm
+//index.html
+//default.htm
+//default.html 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+//Adding Another Middleware Component to the Request Processing Pipeline
+app.Run(async (context) =>
+{
+    await context.Response.WriteAsync("Request Handled and Response Generated");
+});
+//app.MapGet("/", () => $"EnvironmentName: {app.Environment.EnvironmentName} \n" +
+//            $"ApplicationName: {app.Environment.ApplicationName} \n" +
+//            $"WebRootPath: {app.Environment.WebRootPath} \n" +
+//            $"ContentRootPath: {app.Environment.ContentRootPath}");
+//This will Run the Application
+app.Run();
 //This will Start the Application
 app.Run();
