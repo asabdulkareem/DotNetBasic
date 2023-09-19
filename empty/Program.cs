@@ -1,6 +1,8 @@
 // Create
 //Step1: Creating an Instance of WebApplicationOptions Class
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 WebApplicationOptions webApplicationOptions = new WebApplicationOptions
 {
@@ -63,7 +65,14 @@ string? MyCustomKeyValueDirect = configuration["MyCustomKey"];
 //index.html
 //default.htm
 //default.html 
-app.UseDefaultFiles();
+/// Specify the MyCustomPage1.html as the default page
+            //First Create an Instance of DefaultFilesOptions
+DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+//Clear any DefaultFileNames if already there
+defaultFilesOptions.DefaultFileNames.Clear();
+//Add the default HTML Page to the DefaultFilesOptions Instance
+defaultFilesOptions.DefaultFileNames.Add("CustomFiles.html");
+app.UseDefaultFiles(defaultFilesOptions);
 app.UseStaticFiles();
 //Adding Another Middleware Component to the Request Processing Pipeline
 app.Run(async (context) =>
